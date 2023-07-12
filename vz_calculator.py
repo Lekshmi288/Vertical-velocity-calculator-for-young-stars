@@ -6,9 +6,9 @@ class VerticalVelocitiesCalculator:
         self.b = b
         self.l=l
         self.v_z_sun = 7.25
+        self.R  = R
         self.v_c = v_circ(self.R)
         self.R_sun = 8.15
-        self.R  = R
         self.v_c_sun = 229
         self.U_sun = 11.1
         self.V_sun = 12.24
