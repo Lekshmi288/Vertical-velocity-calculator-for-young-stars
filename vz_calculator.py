@@ -14,11 +14,14 @@ class VerticalVelocitiesCalculator:
         self.V_sun = 12.24
 
     def calculate_vertical_velocity(self):
-        S = (self.v_c * (self.R_sun / self.R)- self.v_c_sun) * np.sin(np.radians(self.l))
-        S_sun =(self.U_sun * np.cos(np.radians(self.l))) + (self.v_z_sun * np.sin(np.radians(self.l)))
-        v_z_prime = ((4.74 * self.mu_b * self.d) / np.cos(np.radians(self.b))) + self.v_z_sun + (S - S_sun) * np.tan(np.radians(self.b)
-        return v_z_prime
-      
+        if -20<=self.b<=20:
+            S = (self.v_c * (self.R_sun / self.R)- self.v_c_sun) * np.sin(np.radians(self.l))
+            S_sun =(self.U_sun * np.cos(np.radians(self.l))) + (self.v_z_sun * np.sin(np.radians(self.l)))
+            v_z_prime = ((4.74 * self.mu_b * self.d) / np.cos(np.radians(self.b))) + self.v_z_sun + (S - S_sun) * np.tan(np.radians(self.b)
+            return v_z_prime
+        else:
+             print("Source is not close to the midplane, Sorry!")                                                                                                            
+                                                                                                                         
     def vcirc(self,R):
         vc=229-(1.7*(self.R-self.R_sun))                                                                                                          
         return vc
